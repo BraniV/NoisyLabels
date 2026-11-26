@@ -1,0 +1,84 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathptmx}
+\usepackage[authoryear,round]{natbib}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+\theoremstyle{plain}\newtheorem{proposition}{Proposition}
+\renewcommand{\theproposition}{S\arabic{proposition}}
+\newcommand{\E}{\mathbb E}
+\title{Supplementary Material for ``Learning Wavelet Shrinkage from Noisy Labels:
+Stein Calibration with Interval Teachers''}
+\author{}\date{Draft 06}
+\begin{document}\maketitle
+\noindent This supplement analyses recorruption, an alternative to the Stein score of the main
+paper when the gate is fitted by a learner that is not differentiable in the current
+coefficient. Notation follows the main paper; $\mathcal S$ denotes Stein's unbiased risk estimate.
+
+\section*{S1. Recorruption}
+
+For $W\sim N(0,I_n)$ independent of $D$ and $\alpha>0$, set $D_\alpha=D+\alpha\sigma W$ and
+$T_\alpha=D-\sigma W/\alpha$. Conditionally on $\theta$ the two views are independent, since they are
+jointly Gaussian with zero cross-covariance \citep{pang2021recorrupted}. Hence
+$2B_i(D_\alpha)\{T_{\alpha,i}-M_i(D_\alpha)\}$ is unbiased for the clean contrast at input $D_\alpha$, given
+$(D_\alpha,\theta)$, with variance $4B_i(D_\alpha)^2\sigma^2(1+\alpha^{-2})$, and this remains true for
+features constructed from any part of $D_\alpha$. At $\alpha=0.25$ the target variance factor
+$1+\alpha^{-2}$ is $17$, while the input standard deviation increases by about $3.1$ percent.
+
+\paragraph{Ordinary recorruption.} Consider estimating $k$ projection moments of the clean
+contrast in a fixed smooth basis, using $n_s$ spatial sites and $N_W$ independent draws of $W$ on
+the same noisy signal. Suppose that the population moment vector is Lipschitz in the input
+noise standard deviation, uniformly in $k$; that the summands have bounded-degree dependence
+across sites, both conditionally on $D$ and for their conditional means; and that the
+conditional-mean vectors have squared moments $O(k)$ and the unaveraged vectors $O(k/\alpha^2)$
+for $0<\alpha\le1$. These hold, for example, for bounded smooth localized contrasts with basis
+functions having bounded first derivatives and noisy coefficients with bounded fourth
+moments: a summand is a regular term minus $(2\sigma/\alpha)W_i$ times a basis-weighted endpoint
+gap, and conditional integration by parts cancels the factor $1/\alpha$ against the factor $\alpha\sigma$
+from differentiation. Since $\sigma\sqrt{1+\alpha^2}-\sigma=O(\alpha^2)$, the squared mismatch bias is
+$O(\alpha^4)$, and the law of total variance gives
+$$
+\E\|\widehat\beta_\alpha-\beta_0\|^2\le c_1\alpha^4+c_2k/n_s+c_3k/(n_sN_W\alpha^2).
+$$
+Balancing the first and last terms gives $\alpha_\star=(c_3k/2c_1n_sN_W)^{1/6}$, capped at one, so
+that $\alpha_\star\asymp(N_Wn)^{-1/6}$ for fixed $k$ and $n_s\asymp n$, and the balanced terms are
+$O\{(k/n_sN_W)^{2/3}\}$, smaller than $k/n_s$ when $N_W\gg(n_s/k)^{1/2}$. This is a tuning law for a
+moment bound; transferring it to denoising risk requires control of the map from moments to
+the estimator, and hard random band selection or long-range dependence need separate
+arguments.
+
+\begin{proposition}[Antithetic Stein limit]\label{prop:antithetic}
+Let $h(d)=\delta(d)-d$ and define the single-draw recorruption score
+$$
+F_\alpha(D,W)=n\sigma^2(1+\alpha^2)+\|h(D_\alpha)\|^2+2\sigma(\alpha+\alpha^{-1})W^{\mathsf T}h(D_\alpha).
+$$
+Its expectation over data and perturbation is the risk of $\delta$ at input noise level
+$\sigma\sqrt{1+\alpha^2}$. If $h$ is globally Lipschitz, the conditional mean of $F_\alpha$ given $D$
+converges to $\mathcal S(\delta)$ at points of continuity of the divergence, and the
+conditional variance of the antithetic average $\{F_\alpha(D,W)+F_\alpha(D,-W)\}/2$ remains bounded as
+$\alpha\to0$, for each fixed $D$ and $n$. Under the same regularity and local integrable domination
+of parameter derivatives, the conditional expected parameter gradient converges to the
+gradient of $\mathcal S$.
+\end{proposition}
+
+\begin{proof}
+Expanding $\|\delta(D_\alpha)-T_\alpha\|^2-\|D_\alpha-T_\alpha\|^2+n\sigma^2(1+\alpha^2)$ gives $F_\alpha$, and independence
+of the two views gives the first claim, since $\E\|D_\alpha-T_\alpha\|^2=n\sigma^2(\alpha+\alpha^{-1})^2$. Holding
+$D$ fixed, Gaussian integration by parts yields
+$\E_WF_\alpha=n\sigma^2(1+\alpha^2)+\E_W\|h(D_\alpha)\|^2+2\sigma^2(1+\alpha^2)\E_W\operatorname{div}h(D_\alpha)$,
+and dominated convergence gives $\mathcal S(\delta)$. In the antithetic average the cross term
+becomes $\sigma(\alpha+\alpha^{-1})W^{\mathsf T}\{h(D+\alpha\sigma W)-h(D-\alpha\sigma W)\}$, whose absolute value is
+at most $2L\sigma^2(1+\alpha^2)\|W\|^2$ when $h$ has Lipschitz constant $L$; the squared-norm terms
+have bounded second moments uniformly in $\alpha\le1$. The same domination applied to the
+differentiated identity proves the gradient claim.
+\end{proof}
+
+The averaging identity is closely related to the coupled-bootstrap representation of SURE
+\citep{oliveira2021unbiased}. With independent perturbations one generally needs $N_W\alpha^2\to\infty$
+to suppress the leading conditional variance, whereas antithetic pairs keep it bounded at
+fixed dimension; the sixth-root rule therefore applies to ordinary recorruption only.
+
+
+\bibliographystyle{apalike}
+\bibliography{MLShrinkNoisyLabels06}
+\end{document}

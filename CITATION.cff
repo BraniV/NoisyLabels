@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "NoisyLabels: code for Learning Wavelet Shrinkage from Noisy Labels"
+authors:
+  - family-names: Lakmini
+    given-names: Vijini
+    affiliation: "Texas A&M University"
+  - family-names: Vimalajeewa
+    given-names: Dixon
+    affiliation: "University of Nebraska-Lincoln"
+  - family-names: Vidakovic
+    given-names: Brani
+    affiliation: "Texas A&M University"
+version: "draft-06"
+date-released: 2026-11-25
+license: MIT
+preferred-citation:
+  type: unpublished
+  title: "Learning Wavelet Shrinkage from Noisy Labels: Stein Calibration with Interval Teachers"
+  authors:
+    - family-names: Lakmini
+      given-names: Vijini
+    - family-names: Vimalajeewa
+      given-names: Dixon
+    - family-names: Vidakovic
+      given-names: Brani
+  year: 2026
+  notes: "Draft 06"

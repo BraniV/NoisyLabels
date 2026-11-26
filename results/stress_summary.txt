@@ -1,0 +1,20 @@
+('adm', 2.0): coverage 99.9%  width 0.394  |midpoint - target| 0.110
+   n=128 SURE 64.20 (1.52) | intinf 29.52 (0.67) worse 0% | intcv 33.76 (1.00) worse 0% | mid4.0 18.79 (0.45) worse 0% | midcv 21.91 (0.85) worse 2% | rate4.0 15.21 (0.42) worse 0% | ratecv 19.64 (0.98) worse 0%
+   n=512 SURE 20.73 (0.50) | intinf 13.24 (0.35) worse 0% | intcv 13.99 (0.38) worse 0% | mid4.0 11.26 (0.13) worse 13% | midcv 13.36 (0.25) worse 18% | rate4.0 8.17 (0.11) worse 4% | ratecv 10.32 (0.23) worse 10%
+   n=2048 SURE 5.77 (0.12) | intinf 4.48 (0.10) worse 0% | intcv 4.59 (0.10) worse 0% | mid4.0 9.61 (0.07) worse 91% | midcv 6.54 (0.15) worse 42% | rate4.0 6.71 (0.05) worse 67% | ratecv 5.71 (0.11) worse 39%
+   n=8192 SURE 1.62 (0.03) | intinf 1.50 (0.03) worse 0% | intcv 1.52 (0.03) worse 0% | mid4.0 9.25 (0.06) worse 100% | midcv 1.82 (0.05) worse 47% | rate4.0 6.38 (0.04) worse 100% | ratecv 1.80 (0.05) worse 43%
+('narrow', 2.0): coverage 86.0%  width 0.278  |midpoint - target| 0.109
+   n=128 SURE 64.20 (1.52) | intinf 19.94 (0.43) worse 0% | intcv 24.90 (0.85) worse 0% | mid4.0 17.23 (0.43) worse 0% | midcv 21.14 (0.98) worse 1% | rate4.0 15.21 (0.42) worse 0% | ratecv 19.76 (1.09) worse 0%
+   n=512 SURE 20.73 (0.50) | intinf 10.46 (0.29) worse 0% | intcv 11.59 (0.31) worse 0% | mid4.0 10.07 (0.13) worse 9% | midcv 11.92 (0.25) worse 14% | rate4.0 8.17 (0.11) worse 4% | ratecv 10.38 (0.27) worse 9%
+   n=2048 SURE 5.77 (0.12) | intinf 3.48 (0.10) worse 1% | intcv 3.69 (0.10) worse 1% | mid4.0 8.45 (0.07) worse 86% | midcv 6.10 (0.13) worse 43% | rate4.0 6.71 (0.05) worse 67% | ratecv 5.60 (0.11) worse 39%
+   n=8192 SURE 1.62 (0.03) | intinf 1.16 (0.03) worse 8% | intcv 1.21 (0.03) worse 8% | mid4.0 8.08 (0.06) worse 100% | midcv 1.80 (0.05) worse 47% | rate4.0 6.38 (0.04) worse 100% | ratecv 1.78 (0.05) worse 43%
+('adm', 1.5): coverage 99.9%  width 0.387  |midpoint - target| 0.117
+   n=128 SURE 64.20 (1.52) | intinf 29.59 (0.69) worse 0% | intcv 33.68 (1.01) worse 0% | mid4.0 20.01 (0.46) worse 1% | midcv 24.98 (0.96) worse 2% | rate4.0 16.86 (0.43) worse 0% | ratecv 21.03 (0.97) worse 1%
+   n=512 SURE 20.73 (0.50) | intinf 12.90 (0.36) worse 0% | intcv 13.82 (0.40) worse 0% | mid4.0 12.41 (0.14) worse 17% | midcv 14.49 (0.27) worse 24% | rate4.0 9.68 (0.12) worse 7% | ratecv 11.65 (0.25) worse 14%
+   n=2048 SURE 5.77 (0.12) | intinf 4.28 (0.10) worse 0% | intcv 4.41 (0.10) worse 0% | mid4.0 10.72 (0.08) worse 94% | midcv 6.55 (0.15) worse 45% | rate4.0 8.16 (0.06) worse 84% | ratecv 5.91 (0.13) worse 41%
+   n=8192 SURE 1.62 (0.03) | intinf 1.45 (0.03) worse 0% | intcv 1.47 (0.03) worse 0% | mid4.0 10.35 (0.07) worse 100% | midcv 1.83 (0.04) worse 47% | rate4.0 7.82 (0.05) worse 100% | ratecv 1.78 (0.04) worse 47%
+('adm', 3.0): coverage 99.9%  width 0.391  |midpoint - target| 0.113
+   n=128 SURE 64.20 (1.52) | intinf 29.54 (0.67) worse 0% | intcv 33.99 (0.99) worse 0% | mid4.0 19.21 (0.45) worse 1% | midcv 23.40 (0.97) worse 2% | rate4.0 15.77 (0.42) worse 0% | ratecv 18.16 (0.89) worse 0%
+   n=512 SURE 20.73 (0.50) | intinf 13.12 (0.36) worse 0% | intcv 14.01 (0.38) worse 0% | mid4.0 11.66 (0.13) worse 15% | midcv 14.02 (0.27) worse 20% | rate4.0 8.69 (0.11) worse 5% | ratecv 10.77 (0.22) worse 11%
+   n=2048 SURE 5.77 (0.12) | intinf 4.41 (0.10) worse 0% | intcv 4.52 (0.10) worse 0% | mid4.0 9.99 (0.08) worse 92% | midcv 6.45 (0.15) worse 46% | rate4.0 7.20 (0.05) worse 73% | ratecv 5.82 (0.12) worse 40%
+   n=8192 SURE 1.62 (0.03) | intinf 1.49 (0.03) worse 0% | intcv 1.51 (0.03) worse 0% | mid4.0 9.63 (0.07) worse 100% | midcv 1.81 (0.04) worse 49% | rate4.0 6.87 (0.05) worse 100% | ratecv 1.79 (0.05) worse 43%
